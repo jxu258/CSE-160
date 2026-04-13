@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ASG 1</title>
+
+    <!-- Load external libraries -->
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/webgl-utils.js"></script>
+
+    <script src="asg1.js"></script>
+
+    <style>
+      .info-box {
+        border: 1px solid #bbb;
+        padding: 12px 16px;
+        margin-bottom: 18px;
+        width: 560px;
+        background: #f5f5f5;
+      }
+
+      .info-box p {
+        margin: 4px 0;
+        font-weight: bold;
+      }
+
+      .reference-section {
+        margin-top: 20px;
+      }
+
+      .reference-img {
+        width: 400px;
+        height: auto;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div class="info-box">
+      <p>Name: Peter Xu</p>
+      <p>UCSC Email: jxu258@ucsc.edu</p>
+    </div>
+
+    <canvas id="webgl" width="400" height="400">
+      Please use a browser that supports "canvas"
+    </canvas>
+
+    <br><br>
+
+    <button id="clearButton">Clear Canvas</button>
+    <button id="undoButton">Undo</button>
+
+    <br><br>
+
+    <strong>Drawing Mode:</strong>
+    <button id="pointButton">Squares</button>
+    <button id="triangleButton">Triangles</button>
+    <button id="circleButton">Circles</button>
+    <button id="drawPictureButton">Draw Picture</button>
+    <button id="mirrorButton">Mirror Mode: OFF</button>
+
+    <br><br>
+
+    <strong>Shape Color:</strong>
+    Red <input type="range" id="redS" name="redS" min="0" max="20" value="0">
+    Green <input type="range" id="greenS" name="greenS" min="0" max="20" value="5">
+    Blue <input type="range" id="blueS" name="blueS" min="0" max="20" value="20">
+
+    <br><br>
+
+    <strong>Shape Size:</strong>
+    <input type="range" id="sizeS" name="sizeS" min="5" max="40" value="10">
+
+    <strong>(Circles) Segment Count:</strong>
+    <input type="range" id="segmentS" name="segmentS" min="3" max="20" value="10">
+
+    <div class="reference-section">
+      <p><strong>Draw Picture:</strong> This is my custom flower-shaped letter P design.</p>
+      <p><strong>Awesomeness:</strong> Mirror Mode creates a symmetric copy, and Undo removes the most recent drawing action.</p>
+      <p>Reference Drawing:</p>
+      <img src="reference.jpg" alt="My graph paper reference drawing" class="reference-img">
+    </div>
+  </body>
+</html>
