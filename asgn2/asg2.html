@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ASG 2: Blocky Goat</title>
+
+    <script src="asg2.js"></script>
+
+    <script src="lib/cuon-matrix-cse160.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/webgl-utils.js"></script>
+    
+    <style>
+      body { font-family: sans-serif; padding: 20px;}
+      #webgl { border: 2px solid #000; cursor: grab; }
+      #webgl:active { cursor: grabbing; }
+      .slider-group { margin-bottom: 10px; }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <h2>Assignment 2: Blocky Goat</h2>
+    <canvas id="webgl" width="500" height="400">
+      Please use a browser that supports "canvas"
+    </canvas>
+    
+    <h3 id="fpsIndicator">FPS: 0</h3>
+    <p>Hint: Click & Drag to rotate. Shift + Click to Poke!</p>
+
+    <br>
+    <button id="animOn">Animation ON</button>
+    <button id="animOff">Animation OFF</button>
+    <br><br>
+
+    <div class="slider-group">
+      <strong>Global Rotation:</strong>
+      <input type="range" id="angleSlide" min="-180" max="180" value="0">
+    </div>
+
+    <div class="slider-group">
+      <strong>Head Joint:</strong> <input type="range" id="headSlide" min="-45" max="45" value="0">
+      <strong>Tail Joint:</strong> <input type="range" id="tailSlide" min="-45" max="45" value="0">
+    </div>
+
+    <div class="slider-group">
+      <strong>All Upper Legs:</strong> <input type="range" id="upperLegSlide" min="-45" max="45" value="0">
+      <strong>All Lower Legs:</strong> <input type="range" id="lowerLegSlide" min="-45" max="45" value="0">
+    </div>
+
+    <div class="slider-group">
+      <strong>All Hooves (3rd Joint):</strong> <input type="range" id="hoofSlide" min="-45" max="45" value="0">
+    </div>
+  </body>
+</html>
