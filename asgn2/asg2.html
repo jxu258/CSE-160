@@ -16,10 +16,28 @@
       #webgl { border: 2px solid #000; cursor: grab; }
       #webgl:active { cursor: grabbing; }
       .slider-group { margin-bottom: 10px; }
+
+      .info-box {
+        border: 1px solid #bbb;
+        padding: 12px 16px;
+        margin-bottom: 18px;
+        width: 560px;
+        background: #f5f5f5;
+      }
+
+      .info-box p {
+        margin: 4px 0;
+        font-weight: bold;
+      }
     </style>
   </head>
 
   <body onload="main()">
+    <div class="info-box">
+      <p>Name: Peter Xu</p>
+      <p>UCSC Email: jxu258@ucsc.edu</p>
+    </div>
+    
     <h2>Assignment 2: Blocky Goat</h2>
     <canvas id="webgl" width="500" height="400">
       Please use a browser that supports "canvas"
