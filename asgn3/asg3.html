@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ASG 3: Creating a Virtual World</title>
+
+    <script src="asg3.js"></script>
+
+    <!-- Load camera -->
+    <script src="camera.js"></script>
+
+    <!-- Load geometry -->
+    <script src="geometry/geometry.js"></script>
+    <script src="geometry/triangle.js"></script>
+    <script src="geometry/cube.js"></script>
+    <script src="geometry/square.js"></script>
+
+    <!-- Load external libraries -->
+    <script src="lib/cuon-matrix-cse160.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/webgl-utils.js"></script>
+
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+
+      #webgl {
+        border: 2px solid #000;
+        cursor: grab;
+      }
+
+      #webgl:active {
+        cursor: grabbing;
+      }
+
+      .info-box {
+        border: 1px solid #bbb;
+        padding: 12px 16px;
+        margin-bottom: 18px;
+        width: 560px;
+        background: #f5f5f5;
+      }
+
+      .info-box p {
+        margin: 4px 0;
+        font-weight: bold;
+      }
+
+      .control-box {
+        margin-top: 12px;
+        width: 560px;
+        line-height: 1.5;
+      }
+
+      #gameStatus {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div class="info-box">
+      <p>Name: Peter Xu</p>
+      <p>UCSC Email: jxu258@ucsc.edu</p>
+    </div>
+
+    <h2>Assignment 3: Creating a Virtual World</h2>
+
+    <canvas id="webgl" width="500" height="400">
+      Please use a browser that supports "canvas"
+    </canvas>
+
+    <div class="control-box">
+      <p>
+        <strong>Controls:</strong>
+        W/A/S/D to move, Q/E to turn, mouse to look around, F to add a block, R to remove a block.
+      </p>
+
+      <p id="gameStatus">
+        Story goal: find the gold relic hidden in the maze.
+      </p>
+    </div>
+  </body>
+</html>
