@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ASG 4 - Peter Xu</title>
+
+        <script src="lib/cuon-matrix-cse160.js"></script>
+        <script src="lib/cuon-utils.js"></script>
+        <script src="lib/webgl-debug.js"></script>
+        <script src="lib/webgl-utils.js"></script>
+
+        <script src="camera.js"></script>
+        <script src="models/model.js"></script>
+        <script src="models/cube.js"></script>
+        <script src="models/sphere.js"></script>
+        <script src="models/objModel.js"></script>
+        <script src="asg4.js"></script>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 900px;
+                margin: 22px auto;
+                padding: 0 16px;
+                color: #222;
+            }
+            canvas {
+                border: 1px solid #999;
+                display: block;
+                margin-bottom: 14px;
+            }
+            .info {
+                background: #f7f7f7;
+                border: 1px solid #ddd;
+                padding: 12px;
+                margin-bottom: 14px;
+            }
+            .panel {
+                margin: 10px 0;
+                line-height: 1.9;
+            }
+            .panel label {
+                display: inline-block;
+                min-width: 92px;
+            }
+            button {
+                margin-right: 6px;
+                margin-bottom: 6px;
+            }
+        </style>
+    </head>
+
+    <body onload="main()">
+        <div class="info">
+            <b>Name:</b> Peter Xu<br>
+            <b>UCSC Email:</b> jxu258@ucsc.edu<br>
+            <b>Assignment:</b> ASG4 Lighting
+        </div>
+
+        <canvas id="canvas" width="700" height="550">
+            Please use a browser that supports canvas.
+        </canvas>
+
+        <div class="panel">
+            <b>Controls:</b>
+            W/S move forward/back, A/D pan camera, Q/E move sideways.
+        </div>
+
+        <div class="panel">
+            <label>Zoom Out:</label>
+            <input id="zoomSlider" value="1" type="range" min="1" max="20" oninput="onZoomInput(this.value)">
+            <label>Camera Angle:</label>
+            <input id="cameraAngleSlider" value="0" type="range" min="-180" max="180" step="1" oninput="onCameraAngleInput(this.value)">
+        </div>
+
+        <div class="panel">
+            <button id="lightingBtn" onclick="toggleLighting()">Lighting: ON</button>
+            <button id="normalBtn" onclick="toggleNormals()">Normal Visualization: OFF</button>
+            <button id="pointLightBtn" onclick="togglePointLight()">Point Light: ON</button>
+            <button id="spotLightBtn" onclick="toggleSpotLight()">Spot Light: OFF</button>
+        </div>
+
+        <div class="panel">
+            <label>Light X:</label>
+            <input id="lightXSlider" value="0.0" type="range" min="-5" max="5" step="0.1" oninput="onLightPosInput()">
+            <label>Light Y:</label>
+            <input id="lightYSlider" value="2.60" type="range" min="0.8" max="4.5" step="0.1" oninput="onLightPosInput()">
+            <label>Light Z:</label>
+            <input id="lightZSlider" value="0.0" type="range" min="-5" max="5" step="0.1" oninput="onLightPosInput()">
+        </div>
+
+        <div class="panel">
+            <label>Orbit Radius:</label>
+            <input id="radiusSlider" value="3.4" type="range" min="0.5" max="5" step="0.1" oninput="onLightRadiusInput(this.value)">
+            <label>Light Speed:</label>
+            <input id="speedSlider" value="2.75" type="range" min="0" max="5" step="0.05" oninput="onLightSpeedInput(this.value)">
+        </div>
+
+        <div class="panel">
+            <label>Light R:</label>
+            <input id="lightRSlider" value="1.0" type="range" min="0" max="1" step="0.01" oninput="onLightColorInput()">
+            <label>Light G:</label>
+            <input id="lightGSlider" value="1.0" type="range" min="0" max="1" step="0.01" oninput="onLightColorInput()">
+            <label>Light B:</label>
+            <input id="lightBSlider" value="1.0" type="range" min="0" max="1" step="0.01" oninput="onLightColorInput()">
+        </div>
+    </body>
+</html>
