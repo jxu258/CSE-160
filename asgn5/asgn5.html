@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Peter Xu Assignment 5 - Cozy Duck Kitchen</title>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: black;
+    }
+
+    #info {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      background: rgba(12, 16, 28, 0.78);
+      padding: 12px;
+      border-radius: 10px;
+      max-width: 520px;
+      line-height: 1.42;
+      z-index: 10;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .button-row {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    button {
+      padding: 7px 10px;
+      border: none;
+      border-radius: 6px;
+      background: #ffd166;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #ffe08a;
+    }
+
+    #speedSlider {
+      width: 130px;
+      vertical-align: middle;
+    }
+
+    #status {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #dbeafe;
+    }
+  </style>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <div id="info">
+    <b>Assignment 5: Cozy Duck Kitchen</b><br>
+    Name: Peter Xu<br>
+    Controls: Drag mouse to rotate, scroll to zoom.<br><br>
+
+    <b>Wow Feature:</b> Interactive day/night mode, animated textured duck model following a glowing food trail, moving spotlight that tracks the duck, duck pause/resume, roof toggle, camera focus mode, adjustable duck speed, textured wooden floor, textured skybox, and a complete indoor kitchen scene.
+
+    <div class="button-row">
+      <button id="dayNightButton">Day / Night</button>
+      <button id="pauseButton">Pause Duck</button>
+      <button id="roofButton">Hide Roof</button>
+      <button id="focusButton">Focus Duck</button>
+    </div>
+
+    <div class="button-row">
+      Duck Speed:
+      <input id="speedSlider" type="range" min="0.3" max="2.2" step="0.1" value="1.0">
+      <span id="speedText">1.0x</span>
+    </div>
+
+    <div id="status">
+      Status: Day mode, duck moving, roof visible, free camera.
+    </div>
+  </div>
+
+  <script type="module" src="./asgn5.js"></script>
+</body>
+</html>
